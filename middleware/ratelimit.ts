@@ -1,6 +1,6 @@
 import { kv } from '@vercel/kv';
-import { config } from '../../config.js';
-import type { RateLimitResult, RequestHandler } from '../../types/index.js';
+import { config } from '../config.js';
+import type { RateLimitResult, RequestHandler } from '../types/index.js';
 
 export async function rateLimitMiddleware(
   apiKey: string | undefined,

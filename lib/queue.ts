@@ -1,6 +1,6 @@
 import { Client } from '@upstash/qstash';
 import { kv } from '@vercel/kv';
-import { config } from '../../config.js';
+import { config } from '../config.js';
 import type {
   Job,
   JobType,
@@ -12,7 +12,7 @@ import type {
   EnqueueResult,
   JobStatusResult,
   UpdateJobResult,
-} from '../../types/index.js';
+} from '../types/index.js';
 
 export class QueueService {
   private readonly qstash: Client;

@@ -1,13 +1,13 @@
 import ffmpeg from 'fluent-ffmpeg';
 import { writeFile, readFile, unlink } from 'node:fs/promises';
-import { config } from '../../../config.js';
+import { config } from '../../config.js';
 import type {
   VideoCompressionOptions,
   VideoCompressionResult,
   CompressedFile,
   Thumbnail,
   VideoMetadata,
-} from '../../../types/index.js';
+} from '../../types/index.js';
 
 export class VideoCompressor {
   private readonly tempDir = '/tmp';

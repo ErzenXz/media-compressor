@@ -1,5 +1,5 @@
-import { config } from '../../config.js';
-import type { AuthResult, RequestHandler } from '../../types/index.js';
+import { config } from '../config.js';
+import type { AuthResult, RequestHandler } from '../types/index.js';
 
 export async function authMiddleware(request: Request): Promise<AuthResult> {
   const apiKey = request.headers.get('x-api-key') ?? request.headers.get('authorization');

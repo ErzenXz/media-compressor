@@ -1,4 +1,4 @@
-import { handleWebhook } from '../lib/utils.js';
+import { handleWebhook } from '../../lib/utils.js';
 import { config } from '../../config.js';
 import type { JobStatus } from '../../types/index.js';
 

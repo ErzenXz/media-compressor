@@ -1,7 +1,7 @@
 import { processJob as processImageJob } from '../compress/image.js';
 import { processJob as processVideoJob } from '../compress/video.js';
 import { processJob as processAudioJob } from '../compress/audio.js';
-import { queue } from '../lib/queue.js';
+import { queue } from '../../lib/queue.js';
 import type { JobType } from '../../types/index.js';
 
 async function handler(request: Request): Promise<Response> {

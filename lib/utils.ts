@@ -1,7 +1,7 @@
 import formidable from 'formidable';
 import { createHmac, timingSafeEqual } from 'node:crypto';
-import { config } from '../../config.js';
-import type { ParsedFormData, ParsedFile, MediaType, ApiResponse } from '../../types/index.js';
+import { config } from '../config.js';
+import type { ParsedFormData, ParsedFile, MediaType, ApiResponse } from '../types/index.js';
 
 export async function parseFormData(request: Request): Promise<ParsedFormData> {
   const form = formidable({

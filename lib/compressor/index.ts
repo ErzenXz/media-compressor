@@ -12,7 +12,7 @@ import type {
   ImageMetadata,
   VideoMetadata,
   AudioMetadata
-} from '../../../types/index.js';
+} from '../../types/index.js';
 
 export class CompressorService {
   readonly imageCompressor = imageCompressor;

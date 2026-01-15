@@ -1,17 +1,17 @@
 import { readFileSync } from 'node:fs';
 import { kv } from '@vercel/kv';
-import { withAuth } from '../middleware/auth.js';
-import { withRateLimit } from '../middleware/ratelimit.js';
-import { storage } from '../lib/storage.js';
-import { queue } from '../lib/queue.js';
-import { compressor } from '../lib/compressor/index.js';
+import { withAuth } from '../../middleware/auth.js';
+import { withRateLimit } from '../../middleware/ratelimit.js';
+import { storage } from '../../lib/storage.js';
+import { queue } from '../../lib/queue.js';
+import { compressor } from '../../lib/compressor/index.js';
 import {
   parseFormData,
   getMediaType,
   getFileExtension,
   successResponse,
   errorResponse,
-} from '../lib/utils.js';
+} from '../../lib/utils.js';
 import type {
   Job,
   ImageCompressionOptions,

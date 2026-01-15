@@ -1,7 +1,7 @@
 import { kv } from '@vercel/kv';
-import { withAuth } from '../middleware/auth.js';
-import { queue } from '../lib/queue.js';
-import { successResponse, errorResponse, fileNotFoundResponse } from '../lib/utils.js';
+import { withAuth } from '../../middleware/auth.js';
+import { queue } from '../../lib/queue.js';
+import { successResponse, errorResponse, fileNotFoundResponse } from '../../lib/utils.js';
 import type { Job, RequestHandler } from '../../types/index.js';
 
 const handler: RequestHandler = async (request) => {

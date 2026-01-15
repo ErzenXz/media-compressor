@@ -1,13 +1,13 @@
 import ffmpeg from 'fluent-ffmpeg';
 import { writeFile, readFile, unlink } from 'node:fs/promises';
-import { config } from '../../../config.js';
+import { config } from '../../config.js';
 import type {
   AudioCompressionOptions,
   AudioCompressionResult,
   CompressedFile,
   AudioMetadata,
   AudioFormat,
-} from '../../../types/index.js';
+} from '../../types/index.js';
 
 export class AudioCompressor {
   private readonly tempDir = '/tmp';

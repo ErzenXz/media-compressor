@@ -38,7 +38,8 @@
     "paths": {
       "@/*": ["./*"],
       "@/api/*": ["./api/*"],
-      "@/lib/*": ["./api/lib/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/middleware/*": ["./middleware/*"],
       "@/types/*": ["./types/*"]
     },
     "types": ["node"]

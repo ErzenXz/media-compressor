@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { config } from '../../../config.js';
+import { config } from '../../config.js';
 import type {
   ImageCompressionOptions,
   ImageCompressionResult,
@@ -7,7 +7,7 @@ import type {
   Thumbnail,
   ImageMetadata,
   ImageFormat
-} from '../../../types/index.js';
+} from '../../types/index.js';
 
 export class ImageCompressor {
   async compress(

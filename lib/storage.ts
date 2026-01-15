@@ -4,7 +4,7 @@ import type {
   MultipleUploadResult,
   UploadOptions,
   FileToUpload,
-} from '../../types/index.js';
+} from '../types/index.js';
 
 export class StorageService {
   private readonly enabled: boolean;
