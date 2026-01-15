@@ -549,15 +549,15 @@ media-compressor/
 │   │   ├── status.ts     # Job status endpoint
 │   │   ├── process.ts    # Job processor (QStash worker)
 │   │   └── webhook.ts    # Webhook receiver
-│   ├── lib/
-│   │   ├── compressor/   # Compression modules
-│   │   ├── queue.ts      # QStash queue service
-│   │   ├── storage.ts    # Blob storage service
-│   │   └── utils.ts      # Utility functions
-│   ├── middleware/
-│   │   ├── auth.ts       # Authentication middleware
-│   │   └── ratelimit.ts  # Rate limiting middleware
 │   └── health.ts         # Health check endpoint
+├── lib/
+│   ├── compressor/       # Compression modules
+│   ├── queue.ts          # QStash queue service
+│   ├── storage.ts        # Blob storage service
+│   └── utils.ts          # Utility functions
+├── middleware/
+│   ├── auth.ts           # Authentication middleware
+│   └── ratelimit.ts      # Rate limiting middleware
 ├── types/
 │   └── index.ts          # TypeScript type definitions
 ├── config.ts             # Configuration
