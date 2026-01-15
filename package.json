@@ -1,20 +1,30 @@
 {
   "name": "media-compression-api",
-  "version": "1.0.0",
-  "description": "High-performance media compression API for Vercel",
+  "version": "2.0.0",
+  "description": "High-performance media compression API for Vercel with TypeScript support",
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
-    "build": "vercel build",
-    "start": "node server.js",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "build": "tsc --noEmit && vercel build",
+    "start": "node dist/server.js",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .vercel"
   },
   "keywords": [
     "media",
     "compression",
     "vercel",
-    "api"
+    "api",
+    "typescript",
+    "image",
+    "video",
+    "audio",
+    "sharp",
+    "ffmpeg"
   ],
   "author": "",
   "license": "MIT",
@@ -28,13 +38,20 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "@types/formidable": "^3.4.5",
+    "@types/node": "^22.15.21",
+    "@typescript-eslint/eslint-plugin": "^8.33.0",
+    "@typescript-eslint/parser": "^8.33.0",
     "@vercel/node": "^5.5.20",
     "eslint": "^9.39.2",
     "globals": "^17.0.0",
     "prettier": "^3.7.4",
+    "typescript": "^5.8.3",
     "vercel": "^50.3.3"
   },
   "engines": {
-    "node": ">=18.0.0"
-  }
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@10.10.0"
 }

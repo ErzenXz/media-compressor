@@ -1,21 +1,27 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import globals from 'globals';
 
 export default [
-  js.configs.recommended,
+  eslint.configs.recommended,
   {
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      ecmaVersion: 2022,
+      ecmaVersion: 2024,
       sourceType: 'module',
       globals: {
         ...globals.node,
-        ...globals.browser,
+        ...globals.es2024,
       },
     },
     rules: {
-      'no-unused-vars': 'warn',
-      'no-console': 'off',
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-console': ['warn', { allow: ['warn', 'error', 'log'] }],
+      'prefer-const': 'error',
+      'no-var': 'error',
       'no-undef': 'off',
     },
+  },
+  {
+    ignores: ['node_modules/**', 'dist/**', '.vercel/**', '*.js', '*.cjs', '*.mjs'],
   },
 ];

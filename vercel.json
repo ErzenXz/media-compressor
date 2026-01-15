@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/**/*.js": {
+    "api/**/*.ts": {
       "maxDuration": 300,
       "memory": 2048
     }
   },
   "build": {
     "env": {
-      "NODE_VERSION": "18"
+      "NODE_VERSION": "24"
     }
   }
 }
