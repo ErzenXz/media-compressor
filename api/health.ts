@@ -1,7 +1,7 @@
 import { config } from '../config.js';
 import type { HealthCheckResponse } from '../types/index.js';
 
-async function handler(): Promise<Response> {
+async function handler(_request: Request): Promise<Response> {
   const health: HealthCheckResponse = {
     status: 'healthy',
     timestamp: new Date().toISOString(),
