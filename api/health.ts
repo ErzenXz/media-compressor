@@ -1,8 +1,9 @@
-import { config } from '../config.js';
-import type { HealthCheckResponse } from '../types/index.js';
+export default async function handler(_request: Request): Promise<Response> {
+  const maxFileSize = parseInt(process.env.MAX_FILE_SIZE ?? '') || 500 * 1024 * 1024;
+  const timeout = parseInt(process.env.TIMEOUT ?? '') || 300000;
+  const apiKeys = process.env.API_KEYS ? process.env.API_KEYS.split(',') : [];
 
-async function handler(_request: Request): Promise<Response> {
-  const health: HealthCheckResponse = {
+  const health = {
     status: 'healthy',
     timestamp: new Date().toISOString(),
     version: '2.0.0',
@@ -12,9 +13,9 @@ async function handler(_request: Request): Promise<Response> {
       rateLimit: Boolean(process.env.KV_REST_API_TOKEN),
     },
     config: {
-      maxFileSize: `${config.maxFileSize / 1024 / 1024}MB`,
-      timeout: `${config.timeout / 1000}s`,
-      apiKeysConfigured: config.apiKeys.length > 0,
+      maxFileSize: `${maxFileSize / 1024 / 1024}MB`,
+      timeout: `${timeout / 1000}s`,
+      apiKeysConfigured: apiKeys.length > 0,
     },
   };
 
@@ -25,5 +26,3 @@ async function handler(_request: Request): Promise<Response> {
     },
   });
 }
-
-export default handler;
